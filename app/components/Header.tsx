@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,9 +13,9 @@ export default function Header() {
 
         {/* PC用メニュー */}
         <ul className="hidden md:flex gap-6">
-          <li>About</li>
-          <li>Works</li>
-          <li>Contact</li>
+          <li><Link href="/about">About</Link></li>
+          <li><Link href="/works">Works</Link></li>
+          <li><Link href="/contact">Contact</Link></li>
         </ul>
 
         {/* ハンバーガーボタン（スマホのみ表示） */}
@@ -29,9 +30,9 @@ export default function Header() {
       {/* スマホ用ドロワーメニュー */}
       {isOpen && (
         <ul className="md:hidden flex flex-col gap-4 mt-4">
-          <li>About</li>
-          <li>Works</li>
-          <li>Contact</li>
+          <li><Link href="/about">About</Link></li>
+          <li><Link href="/works">Works</Link></li>
+          <li><Link href="/contact">Contact</Link></li>
         </ul>
       )}
     </header>
